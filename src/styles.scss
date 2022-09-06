@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto+Slab&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--fontText);
+}
+
+:root {
+  --mainBlue: #4E66F8;
+  --darkYellow: #AB8713;
+  --lightYellow: #F7D04D;
+  --brandRed: #e83e8c;
+  --white: white;
+
+  --blue1: #E5E6F1;
+  --blue2: #CDD0E8;
+  --blue3: #B5BAE0;
+  --blue4: #9DA4D7;
+  --blue5: #858ECE;
+  --blue6: #6C78C5;
+  --blue7: #5462BD;
+  --blue8: #3C4CB4;
+  --blue9: #2436AB;
+
+  --fontText: 'Merriweather', serif;
+  --fontHeader: 'Roboto Slab', serif;
+}
