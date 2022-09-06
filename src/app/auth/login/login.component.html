@@ -1,0 +1,53 @@
+<div class="auth-content">
+  <h1 class="auth-header">
+    <fa-icon [icon]="logo"></fa-icon>
+    Побывалка
+  </h1>
+  <h3 class="auth-title">
+    Добро пожаловать
+  </h3>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label for="email" class="form-label">Электронная почта</label>
+      <input type="email" class="form-input" id="email" formControlName="email"
+              placeholder="name@domain.ru"
+             [ngClass]="{'form-input_warning': form.controls['email'].invalid &&
+                                form.controls['email'].touched}">
+      <div class="form-warning" *ngIf="form.controls['email'].invalid &&
+                                form.controls['email'].touched">
+        Нужно указать корректный адрес электронной почты
+      </div>
+    </div>
+
+    <div class="form-control">
+      <div class="form-label_container">
+        <label for="password" class="form-label">Пароль</label>
+        <a class="form-label_link">
+<!--          TODO: добавить ссылку на страницу восстановления пароля-->
+          Забыли пароль?
+        </a>
+      </div>
+      <input type="password" class="form-input" id="password"
+             formControlName="password"
+             [ngClass]="{'form-input_warning': form.controls['password'].invalid &&
+                                form.controls['password'].touched}">
+      <div class="form-warning" *ngIf="form.controls['password'].invalid &&
+                                form.controls['password'].touched">
+        Пароль не может быть короче 6 символов
+      </div>
+    </div>
+
+    <button type="submit" class="form-submit" [disabled]="form.invalid">
+      Войти
+    </button>
+  </form>
+
+  <p class="auth-text">
+    Пока нет аккаунта?
+    <a class="form-label_link">
+<!--      TODO: добавить ссылку на страницу-->
+      Зарегистрируйтесь
+    </a>
+  </p>
+</div>
