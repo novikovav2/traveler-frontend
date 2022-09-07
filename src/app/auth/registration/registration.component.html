@@ -4,14 +4,14 @@
     Побывалка
   </h1>
   <h3 class="auth-title">
-    Добро пожаловать
+    Регистрация
   </h3>
 
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-control">
       <label for="email" class="form-label">Электронная почта</label>
       <input type="email" class="form-input" id="email" formControlName="email"
-              placeholder="name@domain.ru"
+             placeholder="name@domain.ru"
              [ngClass]="{'form-input_warning': form.controls['email'].invalid &&
                                 form.controls['email'].touched}">
       <div class="form-warning" *ngIf="form.controls['email'].invalid &&
@@ -23,10 +23,6 @@
     <div class="form-control">
       <div class="form-label_container">
         <label for="password" class="form-label">Пароль</label>
-        <a class="form-label_link">
-<!--          TODO: добавить ссылку на страницу восстановления пароля-->
-          Забыли пароль?
-        </a>
       </div>
       <input type="password" class="form-input" id="password"
              formControlName="password"
@@ -38,15 +34,29 @@
       </div>
     </div>
 
+    <div class="form-control">
+      <div class="form-label_container">
+        <label for="password_confirmation" class="form-label">Подтвердите пароль</label>
+      </div>
+      <input type="password" class="form-input" id="password_confirmation"
+             formControlName="password_confirmation"
+             [ngClass]="{'form-input_warning': form.controls['password_confirmation'].invalid &&
+                                form.controls['password_confirmation'].touched}">
+      <div class="form-warning" *ngIf="form.errors?.['passwordsNotMatched'] &&
+                                        form.controls['password_confirmation'].touched">
+        Пароли не совпадают
+      </div>
+    </div>
+
     <button type="submit" class="form-submit" [disabled]="form.invalid">
-      Войти
+      Зарегистрироваться
     </button>
   </form>
 
   <p class="auth-text">
-    Пока нет аккаунта?
-    <a class="form-label_link" [routerLink]="[AUTH_URL, REGISTRATION]">
-      Зарегистрируйтесь
+    Уже есть аккаунт?
+    <a class="form-label_link" [routerLink]="[AUTH_URL, LOGIN]">
+      Войдите
     </a>
   </p>
   <div class="auth-spinner_container" >

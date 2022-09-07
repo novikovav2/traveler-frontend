@@ -1,11 +1,11 @@
 import {Component} from "@angular/core";
 import {faLocationDot} from "@fortawesome/free-solid-svg-icons";
 import {FormBuilder, Validators} from "@angular/forms";
-import {AuthService} from "../auth.service";
+import {AuthService} from "../services/auth.service";
 import {ToastrService} from "ngx-toastr";
-import {MSG_ERROR, ROOT_URL} from "../../consts";
+import {AUTH_URL, MSG_ERROR, REGISTRATION, ROOT_URL} from "../../consts";
 import {Router} from "@angular/router";
-import {LoginData} from "../auth.models";
+import {LoginData} from "../services/auth.models";
 
 @Component({
   selector: 'app-login',
@@ -14,6 +14,9 @@ import {LoginData} from "../auth.models";
 })
 export class LoginComponent {
   logo = faLocationDot
+  spinnerShow = false
+  AUTH_URL = AUTH_URL
+  REGISTRATION = REGISTRATION
 
   form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -26,6 +29,7 @@ export class LoginComponent {
               private router: Router) {  }
 
   onSubmit() {
+    this.spinnerShow = true
     const data: LoginData = {
       email: this.form.controls['email'].value || '',
       password: this.form.controls['password'].value || '',
@@ -38,6 +42,7 @@ export class LoginComponent {
         error: (error) => {
           console.log(error)
           this.toastr.error(MSG_ERROR)
+          this.spinnerShow = false
         }
       })
   }

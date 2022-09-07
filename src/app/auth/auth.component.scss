@@ -11,8 +11,11 @@
   }
 
   &-right {
-    flex: 4 1 300px;
-    background-color: #AB8713;
+    flex: 7 1 300px;
+    background-image: url("~src/assets/auth_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -100px;
   }
 
   &-content {
@@ -45,6 +48,18 @@
     width: 100%;
     text-align: center;
     margin-top: 32px;
+  }
+
+  &-spinner {
+    color: var(--blue4);
+
+    &_container {
+      width: 100%;
+      margin-top: 64px;
+      display: flex;
+      justify-content: center;
+      height: 30px;
+    }
   }
 }
 

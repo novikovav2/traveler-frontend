@@ -5,16 +5,19 @@ import {LoginComponent} from "./login/login.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {AuthService} from "./auth.service";
+import {AuthService} from "./services/auth.service";
+import {RegistrationComponent} from "./registration/registration.component";
 
 @NgModule({
   declarations: [
     AuthComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   exports: [
     AuthComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     CommonModule,
