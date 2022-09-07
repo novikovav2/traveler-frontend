@@ -1,0 +1,19 @@
+@media screen and (max-width: 597px) {
+  .auth {
+    &-right {
+      display: none;
+    }
+
+    &-header {
+      font-size: 36px;
+    }
+
+    &-title {
+      font-size: 24px;
+    }
+
+    &-content {
+      padding: 16px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@media screen and (max-width: 1007px) {
+  .auth {
+    &-container {
+      min-height: auto;
+      flex-direction: column-reverse;
+    }
+
+    &-left {
+      flex-basis: 520px;
+    }
+
+    &-right {
+      height: 150px;
+      background-size: unset;
+      background-position-x: -345px;
+      background-position-y: -465px;
+    }
+
+    &-content {
+      padding-top: 36px;
+    }
+  }
+}
