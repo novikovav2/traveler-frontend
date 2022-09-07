@@ -14,4 +14,8 @@ export class AuthService {
   registration(data: LoginData) {
     return of(data)
   }
+
+  forgotPassword(data: LoginData) {
+    return of(data)
+  }
 }

@@ -3,20 +3,21 @@ import {faLocationDot} from "@fortawesome/free-solid-svg-icons";
 import {FormBuilder, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
 import {ToastrService} from "ngx-toastr";
-import {AUTH_URL, MSG_ERROR, REGISTRATION, ROOT_URL} from "../../consts";
+import {AUTH_URL, FORGOT_PASSWORD, MSG_ERROR, REGISTRATION, ROOT_URL} from "../../consts";
 import {Router} from "@angular/router";
 import {LoginData} from "../services/auth.models";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['../auth.component.scss']
+  styleUrls: ['../scss/auth.component.scss']
 })
 export class LoginComponent {
   logo = faLocationDot
   spinnerShow = false
   AUTH_URL = AUTH_URL
   REGISTRATION = REGISTRATION
+  FORGOT_PASSWORD = FORGOT_PASSWORD
 
   form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],

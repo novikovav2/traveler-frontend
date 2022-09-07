@@ -11,7 +11,7 @@ import {PasswordsMatchedValidator} from "../services/password-match.directive";
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['../auth.component.scss']
+  styleUrls: ['../scss/auth.component.scss']
 })
 export class RegistrationComponent {
   logo = faLocationDot
