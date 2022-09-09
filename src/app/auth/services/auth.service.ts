@@ -18,4 +18,8 @@ export class AuthService {
   forgotPassword(data: LoginData) {
     return of(data)
   }
+
+  resetPassword(id: string, data: LoginData) {
+    return of(data)
+  }
 }

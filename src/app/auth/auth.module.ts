@@ -9,6 +9,7 @@ import {AuthService} from "./services/auth.service";
 import {RegistrationComponent} from "./registration/registration.component";
 import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
 import {HeaderComponent} from "./header/header.component";
+import {ResetPasswordComponent} from "./reset-password/reset-password.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HeaderComponent} from "./header/header.component";
     LoginComponent,
     RegistrationComponent,
     ForgotPasswordComponent,
-    HeaderComponent
+    HeaderComponent,
+    ResetPasswordComponent
   ],
   exports: [ ],
   imports: [
