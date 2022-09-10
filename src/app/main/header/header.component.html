@@ -1,0 +1,20 @@
+<header class="header ">
+  <div class="header-container">
+    <div class="header-left">
+      <div class="header-logo">
+        <fa-icon [icon]="logo"></fa-icon>
+        Побывалка
+      </div>
+      <div class="header-search">
+        <input class="header-search_input" [formControl]="searchText">
+        <button class="header-search_btn" (click)="onSearch()">
+          <fa-icon [icon]="searchBtn"></fa-icon>
+        </button>
+      </div>
+
+    </div>
+    <div class="header-right">
+      <img [src]="iconUrl" class="header-icon" (click)="showMenu()" alt="Профиль">
+    </div>
+  </div>
+</header>
